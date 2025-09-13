@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAnimations();
   initCounters();
   initTechNodes();
+  initMobileMenu();
 });
 
 // Loading Animation
@@ -730,3 +731,41 @@ function initEnhancedFormHandling() {
 
 // Initialize enhanced form handling
 initEnhancedFormHandling();
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  if (hamburger && navMenu) {
+    // Toggle mobile menu
+    hamburger.addEventListener("click", function () {
+      this.classList.toggle("active");
+      navMenu.classList.toggle("active");
+
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = navMenu.classList.contains("active")
+        ? "hidden"
+        : "auto";
+    });
+
+    // Close menu when clicking on a link
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    });
+  }
+}
