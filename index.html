@@ -68,7 +68,7 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -165,7 +165,7 @@
     <!-- Skip to main content link -->
     <a href="#home" class="skip-link">Skip to main content</a>
 
-    <!-- Loading Screen -->
+    <!-- Enhanced Loading Screen -->
     <div id="loading-screen" class="loading-screen">
       <div class="loading-container">
         <div class="loading-logo">
@@ -176,7 +176,27 @@
         <div class="loading-bar">
           <div class="loading-progress"></div>
         </div>
-        <div class="loading-text">Đang tải...</div>
+        <div class="loading-text">Đang tải trải nghiệm tuyệt vời...</div>
+        <div class="loading-tips">
+          <div class="tip-item active" data-tip="1">
+            <span class="tip-icon"><i class="fas fa-lightbulb"></i></span>
+            <span class="tip-text"
+              >Kham pha cac giai phap cong nghe tien tien</span
+            >
+          </div>
+          <div class="tip-item" data-tip="2">
+            <span class="tip-icon"><i class="fas fa-rocket"></i></span>
+            <span class="tip-text"
+              >Trai nghiem giao dien hien dai va muot ma</span
+            >
+          </div>
+          <div class="tip-item" data-tip="3">
+            <span class="tip-icon"><i class="fas fa-bullseye"></i></span>
+            <span class="tip-text"
+              >Tim hieu ve doi ngu chuyen gia cua chung toi</span
+            >
+          </div>
+        </div>
       </div>
     </div>
 
@@ -190,8 +210,21 @@
       <i class="fas fa-sun"></i>
     </button>
 
+    <!-- Progress Indicator -->
+    <div
+      id="progress-indicator"
+      class="progress-indicator"
+      role="progressbar"
+      aria-label="Trang tiến độ"
+    >
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="progress-text">0%</div>
+    </div>
+
     <!-- Header -->
-    <header role="banner">
+    <header class="header" role="banner">
       <nav class="container" role="navigation" aria-label="Main navigation">
         <div class="nav-brand">
           <a
@@ -272,10 +305,10 @@
         <div class="hero-pattern"></div>
         <div class="hero-gradient"></div>
 
-        <!-- Floating Particles -->
+        <!-- Enhanced Floating Particles -->
         <div class="floating-particles" aria-hidden="true">
           <div
-            class="particle"
+            class="particle particle-1"
             style="
               top: 20%;
               left: 10%;
@@ -285,7 +318,7 @@
             "
           ></div>
           <div
-            class="particle"
+            class="particle particle-2"
             style="
               top: 60%;
               left: 80%;
@@ -295,7 +328,7 @@
             "
           ></div>
           <div
-            class="particle"
+            class="particle particle-3"
             style="
               top: 40%;
               left: 70%;
@@ -305,7 +338,7 @@
             "
           ></div>
           <div
-            class="particle"
+            class="particle particle-4"
             style="
               top: 80%;
               left: 20%;
@@ -314,6 +347,55 @@
               background: var(--accent);
             "
           ></div>
+          <div
+            class="particle particle-5"
+            style="
+              top: 30%;
+              left: 90%;
+              width: 4px;
+              height: 4px;
+              background: #10b981;
+            "
+          ></div>
+          <div
+            class="particle particle-6"
+            style="
+              top: 70%;
+              left: 5%;
+              width: 14px;
+              height: 14px;
+              background: var(--accent);
+            "
+          ></div>
+          <div
+            class="particle particle-7"
+            style="
+              top: 50%;
+              left: 50%;
+              width: 3px;
+              height: 3px;
+              background: #8b5cf6;
+            "
+          ></div>
+          <div
+            class="particle particle-8"
+            style="
+              top: 15%;
+              left: 85%;
+              width: 7px;
+              height: 7px;
+              background: #f59e0b;
+            "
+          ></div>
+        </div>
+
+        <!-- Geometric Shapes Background -->
+        <div class="geometric-shapes" aria-hidden="true">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+          <div class="shape shape-5"></div>
         </div>
       </div>
 
@@ -321,33 +403,62 @@
         <div class="hero-content">
           <div class="hero-text">
             <div class="hero-badge magnetic" role="banner">
-              <span class="badge-icon" aria-hidden="true">🚀</span>
-              <span>Công Nghệ Tiên Tiến Nhất 2024</span>
+              <span class="badge-icon" aria-hidden="true"><i class="fas fa-rocket"></i></span>
+              <span>Cong Nghe Tien Tien Nhat 2025</span>
+              <span class="badge-pulse"></span>
             </div>
 
             <h1 id="hero-title" class="hero-title">
-              <span class="title-main text-reveal"
-                ><span>Giải Pháp Công Nghệ</span></span
-              >
-              <span class="title-accent text-reveal"
-                ><span>Số Hiện Đại</span></span
-              >
+              <span class="title-main text-reveal">
+                <span>Giải Pháp Công Nghệ</span>
+                <span class="title-highlight">Đột Phá</span>
+              </span>
+              <span class="title-accent text-reveal">
+                <span>Số Hiện Đại</span>
+                <span class="title-glow"></span>
+              </span>
             </h1>
 
             <p class="hero-description">
               Chúng tôi cung cấp các giải pháp công nghệ toàn diện với
-              <strong class="gradient-text">AI & Machine Learning</strong>,
-              <strong class="gradient-text">Cloud Computing</strong>, và
-              <strong class="gradient-text">DevOps</strong> để tối ưu hóa doanh
-              nghiệp của bạn.
+              <strong class="gradient-text tech-highlight"
+                >AI & Machine Learning</strong
+              >,
+              <strong class="gradient-text tech-highlight"
+                >Cloud Computing</strong
+              >, và
+              <strong class="gradient-text tech-highlight">DevOps</strong> để
+              tối ưu hóa doanh nghiệp của bạn.
             </p>
+
+            <!-- Trust Indicators -->
+            <div class="hero-trust" role="region" aria-label="Trust indicators">
+              <div class="trust-item">
+                <span class="trust-icon"><i class="fas fa-star"></i></span>
+                <span class="trust-text">4.9/5 Rating</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon"><i class="fas fa-trophy"></i></span>
+                <span class="trust-text">Top 10 Viet Nam</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon"><i class="fas fa-shield-alt"></i></span>
+                <span class="trust-text">ISO 27001 Certified</span>
+              </div>
+            </div>
 
             <div
               class="hero-stats"
               role="region"
               aria-label="Company statistics"
             >
-              <div class="stat-item scroll-reveal" role="text">
+              <div
+                class="stat-item scroll-reveal stat-card-enhanced"
+                role="text"
+              >
+                <div class="stat-icon">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
                 <div
                   class="stat-number"
                   data-target="500"
@@ -356,8 +467,17 @@
                   0
                 </div>
                 <div class="stat-label">Dự án hoàn thành</div>
+                <div class="stat-progress">
+                  <div class="progress-bar"></div>
+                </div>
               </div>
-              <div class="stat-item scroll-reveal delay-1" role="text">
+              <div
+                class="stat-item scroll-reveal delay-1 stat-card-enhanced"
+                role="text"
+              >
+                <div class="stat-icon">
+                  <i class="fas fa-smile"></i>
+                </div>
                 <div
                   class="stat-number"
                   data-target="98"
@@ -366,8 +486,17 @@
                   0
                 </div>
                 <div class="stat-label">Khách hàng hài lòng</div>
+                <div class="stat-progress">
+                  <div class="progress-bar"></div>
+                </div>
               </div>
-              <div class="stat-item scroll-reveal delay-2" role="text">
+              <div
+                class="stat-item scroll-reveal delay-2 stat-card-enhanced"
+                role="text"
+              >
+                <div class="stat-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
                 <div
                   class="stat-number"
                   data-target="24"
@@ -376,6 +505,9 @@
                   0
                 </div>
                 <div class="stat-label">Hỗ trợ 24/7</div>
+                <div class="stat-progress">
+                  <div class="progress-bar"></div>
+                </div>
               </div>
             </div>
 
@@ -386,19 +518,29 @@
             >
               <a
                 href="#services"
-                class="btn btn-primary liquid-button interactive-glow"
+                class="btn btn-primary liquid-button interactive-glow hero-cta-primary"
                 aria-describedby="services-desc"
               >
                 <span>Khám phá dịch vụ</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                <div class="btn-ripple"></div>
               </a>
               <a
                 href="#contact"
-                class="btn btn-secondary magnetic"
+                class="btn btn-secondary magnetic hero-cta-secondary"
                 aria-describedby="contact-desc"
               >
                 <span>Liên hệ tư vấn</span>
                 <i class="fas fa-phone" aria-hidden="true"></i>
+                <div class="btn-shine"></div>
+              </a>
+              <a
+                href="#about"
+                class="btn btn-ghost hero-cta-ghost"
+                aria-describedby="about-desc"
+              >
+                <span>Tìm hiểu thêm</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </a>
             </div>
 
@@ -408,6 +550,9 @@
             </div>
             <div id="contact-desc" class="sr-only">
               Get free consultation for your project
+            </div>
+            <div id="about-desc" class="sr-only">
+              Learn more about our company and expertise
             </div>
           </div>
 
@@ -676,28 +821,53 @@
               </svg>
             </div>
 
-            <!-- Tech stack showcase -->
+            <!-- Enhanced Tech Stack Showcase -->
             <div class="tech-stack-showcase">
-              <div class="tech-item">
-                <i class="fab fa-react"></i>
+              <div class="tech-item tech-interactive" data-tech="react">
+                <div class="tech-icon-wrapper">
+                  <i class="fab fa-react"></i>
+                  <div class="tech-glow"></div>
+                </div>
                 <span>React</span>
+                <div class="tech-tooltip">Modern UI Framework</div>
               </div>
-              <div class="tech-item">
-                <i class="fab fa-node-js"></i>
+              <div class="tech-item tech-interactive" data-tech="nodejs">
+                <div class="tech-icon-wrapper">
+                  <i class="fab fa-node-js"></i>
+                  <div class="tech-glow"></div>
+                </div>
                 <span>Node.js</span>
+                <div class="tech-tooltip">Backend Runtime</div>
               </div>
-              <div class="tech-item">
-                <i class="fab fa-python"></i>
+              <div class="tech-item tech-interactive" data-tech="python">
+                <div class="tech-icon-wrapper">
+                  <i class="fab fa-python"></i>
+                  <div class="tech-glow"></div>
+                </div>
                 <span>Python</span>
+                <div class="tech-tooltip">AI & Data Science</div>
               </div>
-              <div class="tech-item">
-                <i class="fab fa-aws"></i>
+              <div class="tech-item tech-interactive" data-tech="aws">
+                <div class="tech-icon-wrapper">
+                  <i class="fab fa-aws"></i>
+                  <div class="tech-glow"></div>
+                </div>
                 <span>AWS</span>
+                <div class="tech-tooltip">Cloud Platform</div>
+              </div>
+              <div class="tech-item tech-interactive" data-tech="docker">
+                <div class="tech-icon-wrapper">
+                  <i class="fab fa-docker"></i>
+                  <div class="tech-glow"></div>
+                </div>
+                <span>Docker</span>
+                <div class="tech-tooltip">Container Platform</div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
       <!-- Scroll indicator -->
       <div class="scroll-indicator">
@@ -709,423 +879,716 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features" aria-labelledby="features-title">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">Công Nghệ Tiên Tiến</div>
-          <h2 class="section-title">Giải Pháp Công Nghệ Toàn Diện</h2>
+          <h2 id="features-title" class="section-title">
+            Giải Pháp Công Nghệ Toàn Diện
+          </h2>
           <p class="section-description">
             Chúng tôi cung cấp các giải pháp công nghệ hiện đại nhất để tối ưu
-            hóa hiệu suất và trải nghiệm người dùng cho doanh nghiệp của bạn.
+            hóa hiệu suất và trải nghiệm người dùng cho doanh nghiệp của bạn. Từ
+            phát triển ứng dụng di động đến trí tuệ nhân tạo, chúng tôi mang đến
+            những giải pháp toàn diện và đáng tin cậy.
           </p>
         </div>
 
         <div class="features-grid">
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-code"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>Web Development</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="Phát Triển Website">
+                Phát Triển Website
+              </h3>
+            </header>
+            <p itemprop="description">
               Phát triển website hiện đại với React, Vue.js, Node.js. Tối ưu
-              performance và trải nghiệm người dùng.
+              performance và trải nghiệm người dùng. Chúng tôi tạo ra các
+              website responsive, nhanh chóng và bảo mật cao với công nghệ tiên
+              tiến nhất.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">React</span>
               <span class="tech-tag gradient-animate">Vue.js</span>
               <span class="tech-tag gradient-animate">Node.js</span>
+              <span class="tech-tag gradient-animate">TypeScript</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="Web Development" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-mobile-alt"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>Mobile Apps</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="Ứng Dụng Di Động">
+                Ứng Dụng Di Động
+              </h3>
+            </header>
+            <p itemprop="description">
               Ứng dụng di động native và cross-platform. iOS, Android với
-              Flutter và React Native.
+              Flutter và React Native. Phát triển ứng dụng chất lượng cao với
+              performance tối ưu và trải nghiệm người dùng xuất sắc.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">Flutter</span>
               <span class="tech-tag gradient-animate">React Native</span>
               <span class="tech-tag gradient-animate">Swift</span>
+              <span class="tech-tag gradient-animate">Kotlin</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="Mobile App Development" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-brain"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-brain" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>AI & Machine Learning</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="AI & Machine Learning">
+                AI & Machine Learning
+              </h3>
+            </header>
+            <p itemprop="description">
               Giải pháp trí tuệ nhân tạo và học máy. Phân tích dữ liệu thông
-              minh và dự đoán.
+              minh và dự đoán. Chúng tôi triển khai các mô hình AI tiên tiến để
+              tối ưu hóa quy trình kinh doanh và đưa ra quyết định thông minh.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">TensorFlow</span>
               <span class="tech-tag gradient-animate">PyTorch</span>
               <span class="tech-tag gradient-animate">NLP</span>
+              <span class="tech-tag gradient-animate">Computer Vision</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="AI & Machine Learning" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-cloud"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-cloud" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>Cloud Computing</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="Cloud Computing">
+                Cloud Computing
+              </h3>
+            </header>
+            <p itemprop="description">
               Kiến trúc đám mây scalable và bảo mật. AWS, Azure, Google Cloud
-              với tối ưu chi phí.
+              với tối ưu chi phí. Chúng tôi thiết kế và triển khai các giải pháp
+              đám mây hiệu quả, bảo mật và có khả năng mở rộng cao.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">AWS</span>
               <span class="tech-tag gradient-animate">Docker</span>
               <span class="tech-tag gradient-animate">Kubernetes</span>
+              <span class="tech-tag gradient-animate">Terraform</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="Cloud Computing" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-shield-alt"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>Cybersecurity</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="Cybersecurity">Cybersecurity</h3>
+            </header>
+            <p itemprop="description">
               Bảo mật thông tin doanh nghiệp toàn diện. SSL, firewall, và tuân
-              thủ các tiêu chuẩn quốc tế.
+              thủ các tiêu chuẩn quốc tế. Chúng tôi cung cấp các giải pháp bảo
+              mật tiên tiến để bảo vệ dữ liệu và hệ thống của doanh nghiệp bạn.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">SSL</span>
               <span class="tech-tag gradient-animate">Firewall</span>
               <span class="tech-tag gradient-animate">Encryption</span>
+              <span class="tech-tag gradient-animate">Zero Trust</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="Cybersecurity" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="feature-card animate-on-scroll card-3d magnetic">
-            <div class="feature-icon morph-shape">
-              <i class="fas fa-cogs"></i>
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-cogs" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
             </div>
-            <h3>DevOps & CI/CD</h3>
-            <p>
+            <header>
+              <h3 itemprop="name" data-text="DevOps & CI/CD">DevOps & CI/CD</h3>
+            </header>
+            <p itemprop="description">
               Tự động hóa quy trình phát triển và triển khai. Git, Jenkins, và
-              monitoring 24/7.
+              monitoring 24/7. Chúng tôi triển khai các pipeline CI/CD hiện đại
+              để tăng tốc độ phát triển và đảm bảo chất lượng sản phẩm.
             </p>
             <div class="feature-tech">
               <span class="tech-tag gradient-animate">Git</span>
               <span class="tech-tag gradient-animate">Jenkins</span>
               <span class="tech-tag gradient-animate">Docker</span>
+              <span class="tech-tag gradient-animate">GitLab CI</span>
             </div>
-          </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="DevOps & CI/CD" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
+
+          <!-- New Technology Cards -->
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
+            </div>
+            <header>
+              <h3 itemprop="name" data-text="IoT & Smart Devices">
+                IoT & Smart Devices
+              </h3>
+            </header>
+            <p itemprop="description">
+              Giải pháp Internet of Things và thiết bị thông minh. Kết nối và
+              quản lý các thiết bị IoT một cách hiệu quả. Chúng tôi phát triển
+              các hệ thống IoT toàn diện với khả năng giám sát và điều khiển từ
+              xa.
+            </p>
+            <div class="feature-tech">
+              <span class="tech-tag gradient-animate">IoT</span>
+              <span class="tech-tag gradient-animate">MQTT</span>
+              <span class="tech-tag gradient-animate">Raspberry Pi</span>
+              <span class="tech-tag gradient-animate">Arduino</span>
+            </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="IoT & Smart Devices" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
+
+          <article
+            class="feature-card animate-on-scroll card-3d magnetic premium-card"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
+            <div class="feature-icon morph-shape premium-icon">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+              <div class="icon-glow"></div>
+            </div>
+            <header>
+              <h3 itemprop="name" data-text="Big Data Analytics">
+                Big Data Analytics
+              </h3>
+            </header>
+            <p itemprop="description">
+              Phân tích dữ liệu lớn và business intelligence. Xử lý và phân tích
+              dữ liệu khổng lồ để đưa ra insights có giá trị. Chúng tôi cung cấp
+              các giải pháp phân tích dữ liệu tiên tiến để tối ưu hóa quyết định
+              kinh doanh.
+            </p>
+            <div class="feature-tech">
+              <span class="tech-tag gradient-animate">Hadoop</span>
+              <span class="tech-tag gradient-animate">Spark</span>
+              <span class="tech-tag gradient-animate">Kafka</span>
+              <span class="tech-tag gradient-animate">Elasticsearch</span>
+            </div>
+            <div class="card-decoration">
+              <div class="decoration-line"></div>
+              <div class="decoration-dot"></div>
+            </div>
+            <meta itemprop="serviceType" content="Big Data Analytics" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">Dịch Vụ Chuyên Nghiệp</div>
-          <h2 class="section-title">Giải Pháp Toàn Diện Cho Doanh Nghiệp</h2>
+          <h2 id="services-title" class="section-title">
+            Giải Pháp Toàn Diện Cho Doanh Nghiệp
+          </h2>
           <p class="section-description">
             Từ tư vấn, thiết kế đến triển khai và bảo trì, chúng tôi cung cấp
-            dịch vụ trọn gói cho mọi nhu cầu công nghệ.
+            dịch vụ trọn gói cho mọi nhu cầu công nghệ. Với đội ngũ chuyên gia
+            giàu kinh nghiệm và quy trình làm việc chuyên nghiệp, chúng tôi đảm
+            bảo mang đến cho bạn những giải pháp công nghệ chất lượng cao.
           </p>
         </div>
 
         <div class="services-grid">
-          <div class="service-card premium">
+          <article
+            class="service-card premium"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
             <div class="service-header">
               <div class="service-icon">
-                <i class="fas fa-rocket"></i>
+                <i class="fas fa-rocket" aria-hidden="true"></i>
               </div>
               <div class="service-meta">
                 <span class="service-category">Premium</span>
-                <span class="service-price">Từ 50M</span>
+                <span class="service-price" itemprop="priceRange"
+                  >Từ 50M VND</span
+                >
               </div>
             </div>
-            <h3>Thiết Kế Website</h3>
-            <p>
+            <header>
+              <h3 itemprop="name">Thiết Kế Website</h3>
+            </header>
+            <p itemprop="description">
               Thiết kế giao diện website hiện đại, responsive, tối ưu UX/UI với
-              công nghệ mới nhất. Bao gồm hosting và domain.
+              công nghệ mới nhất. Bao gồm hosting và domain. Chúng tôi tạo ra
+              các website đẹp mắt, chức năng và hiệu quả kinh doanh.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Thiết kế responsive hoàn hảo</li>
-              <li><i class="fas fa-check"></i> Tối ưu tốc độ tải trang</li>
-              <li><i class="fas fa-check"></i> SEO-friendly structure</li>
-              <li><i class="fas fa-check"></i> Bảo mật SSL miễn phí</li>
-              <li><i class="fas fa-check"></i> Hỗ trợ kỹ thuật 6 tháng</li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Thiết kế
+                responsive hoàn hảo
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Tối ưu tốc độ
+                tải trang
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> SEO-friendly
+                structure
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Bảo mật SSL miễn
+                phí
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Hỗ trợ kỹ thuật
+                6 tháng
+              </li>
             </ul>
-            <a href="#contact" class="service-cta">Đăng ký ngay</a>
-          </div>
+            <a
+              href="#contact"
+              class="service-cta"
+              aria-label="Đăng ký dịch vụ thiết kế website ngay"
+              >Đăng ký ngay</a
+            >
+            <meta itemprop="serviceType" content="Web Design" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="service-card enterprise">
+          <article
+            class="service-card enterprise"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
             <div class="service-header">
               <div class="service-icon">
-                <i class="fas fa-mobile-screen"></i>
+                <i class="fas fa-mobile-screen" aria-hidden="true"></i>
               </div>
               <div class="service-meta">
                 <span class="service-category">Enterprise</span>
-                <span class="service-price">Từ 200M</span>
+                <span class="service-price" itemprop="priceRange"
+                  >Từ 200M VND</span
+                >
               </div>
             </div>
-            <h3>Phát Triển Ứng Dụng</h3>
-            <p>
+            <header>
+              <h3 itemprop="name">Phát Triển Ứng Dụng</h3>
+            </header>
+            <p itemprop="description">
               Phát triển ứng dụng di động và web app với công nghệ tiên tiến,
-              bảo mật cao và performance tối ưu.
+              bảo mật cao và performance tối ưu. Chúng tôi tạo ra các ứng dụng
+              chất lượng cao đáp ứng mọi nhu cầu kinh doanh của bạn.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Native & Cross-platform</li>
-              <li><i class="fas fa-check"></i> API integration</li>
-              <li><i class="fas fa-check"></i> Real-time features</li>
-              <li><i class="fas fa-check"></i> Cloud deployment</li>
-              <li><i class="fas fa-check"></i> Bảo mật enterprise</li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Native &
+                Cross-platform
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> API integration
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Real-time
+                features
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Cloud deployment
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Bảo mật
+                enterprise
+              </li>
             </ul>
-            <a href="#contact" class="service-cta">Liên hệ tư vấn</a>
-          </div>
+            <a
+              href="#contact"
+              class="service-cta"
+              aria-label="Liên hệ tư vấn dịch vụ phát triển ứng dụng"
+              >Liên hệ tư vấn</a
+            >
+            <meta itemprop="serviceType" content="Mobile App Development" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
 
-          <div class="service-card consulting">
+          <article
+            class="service-card consulting"
+            itemscope
+            itemtype="https://schema.org/Service"
+          >
             <div class="service-header">
               <div class="service-icon">
-                <i class="fas fa-users-cog"></i>
+                <i class="fas fa-users-cog" aria-hidden="true"></i>
               </div>
               <div class="service-meta">
                 <span class="service-category">Consulting</span>
-                <span class="service-price">Theo dự án</span>
+                <span class="service-price" itemprop="priceRange"
+                  >Theo dự án</span
+                >
               </div>
             </div>
-            <h3>Tư Vấn & Hỗ Trợ</h3>
-            <p>
+            <header>
+              <h3 itemprop="name">Tư Vấn & Hỗ Trợ</h3>
+            </header>
+            <p itemprop="description">
               Tư vấn giải pháp công nghệ, maintenance và hỗ trợ kỹ thuật 24/7
-              cho doanh nghiệp của bạn.
+              cho doanh nghiệp của bạn. Chúng tôi cung cấp dịch vụ tư vấn chuyên
+              nghiệp để giúp bạn đưa ra quyết định công nghệ đúng đắn.
             </p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Technical consulting</li>
-              <li><i class="fas fa-check"></i> System maintenance</li>
-              <li><i class="fas fa-check"></i> 24/7 support</li>
-              <li><i class="fas fa-check"></i> Performance monitoring</li>
-              <li><i class="fas fa-check"></i> Security audit</li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Technical
+                consulting
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> System
+                maintenance
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> 24/7 support
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Performance
+                monitoring
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Security audit
+              </li>
             </ul>
-            <a href="#contact" class="service-cta">Tư vấn miễn phí</a>
-          </div>
+            <a
+              href="#contact"
+              class="service-cta"
+              aria-label="Nhận tư vấn miễn phí từ TechPro Solutions"
+              >Tư vấn miễn phí</a
+            >
+            <meta itemprop="serviceType" content="Technology Consulting" />
+            <meta itemprop="provider" content="TechPro Solutions" />
+          </article>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
       <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <div class="section-badge">Về Chúng Tôi</div>
-            <h2 class="section-title">TechPro Solutions</h2>
-            <p class="about-description">
-              TechPro Solutions là công ty công nghệ hàng đầu Việt Nam, chuyên
-              cung cấp các giải pháp kỹ thuật số toàn diện cho doanh nghiệp. Với
-              đội ngũ hơn 50 chuyên gia giàu kinh nghiệm và công nghệ tiên tiến
-              nhất, chúng tôi cam kết mang đến cho khách hàng những sản phẩm
-              chất lượng cao và dịch vụ vượt trội.
-            </p>
-            <p class="about-description">
-              Chúng tôi tin rằng công nghệ không chỉ là công cụ, mà là động lực
-              thúc đẩy sự phát triển bền vững của doanh nghiệp. Mỗi dự án đều
-              được thực hiện với tâm huyết và sự tận tâm cao nhất.
-            </p>
+        <div
+          class="about-content"
+          itemscope
+          itemtype="https://schema.org/Organization"
+        >
+          <meta itemprop="name" content="TechPro Solutions" />
+          <meta
+            itemprop="description"
+            content="Công ty công nghệ hàng đầu Việt Nam chuyên cung cấp giải pháp kỹ thuật số toàn diện"
+          />
+          <meta itemprop="url" content="https://techpro.vn" />
+          <meta itemprop="logo" content="https://techpro.vn/logo.png" />
 
+          <!-- Main Content Row -->
+          <div class="about-main">
+            <div class="about-text">
+              <div class="section-badge">Về Chúng Tôi</div>
+              <h2 id="about-title" class="section-title">TechPro Solutions</h2>
+              <p class="about-description">
+                TechPro Solutions la cong ty cong nghe hang dau Viet Nam, chuyen
+                cung cap cac giai phap ky thuat so toan dien cho doanh nghiep. Voi
+                doi ngu hon 50 chuyen gia giau kinh nghiem va cong nghe tien tien
+                nhat, chung toi cam ket mang den cho khach hang nhung san pham
+                chat luong cao va dich vu vuot troi.
+              </p>
+              <p class="about-description">
+                Chung toi tin rang cong nghe khong chi la cong cu, ma la dong luc
+                thuc day su phat trien ben vung cua doanh nghiep. Moi du an deu
+                duoc thuc hien voi tam huyet va su tan tam cao nhat, dam bao mang
+                lai gia tri lau dai cho khach hang.
+              </p>
+            </div>
+
+            <div class="about-visual">
+              <div class="about-svg-container">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient
+                      id="aboutGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #6366f1; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #8b5cf6; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                    <radialGradient id="teamGlow" cx="50%" cy="50%" r="50%">
+                      <stop
+                        offset="0%"
+                        style="stop-color: #6366f1; stop-opacity: 0.2"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #6366f1; stop-opacity: 0"
+                      />
+                    </radialGradient>
+                  </defs>
+
+                  <!-- Background elements -->
+                  <circle
+                    cx="250"
+                    cy="250"
+                    r="200"
+                    fill="url(#teamGlow)"
+                    opacity="0.6"
+                  />
+
+                  <!-- Team collaboration illustration -->
+                  <g transform="translate(250,250)">
+                    <!-- Central hub -->
+                    <circle cx="0" cy="0" r="40" fill="url(#aboutGradient)" />
+                    <circle
+                      cx="0"
+                      cy="0"
+                      r="25"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="3"
+                    />
+                    <circle cx="0" cy="0" r="15" fill="white" />
+
+                    <!-- Team members -->
+                    <g class="team-member dev" transform="translate(100, 0)">
+                      <circle cx="0" cy="0" r="20" fill="#10b981" />
+                      <circle cx="0" cy="0" r="10" fill="white" />
+                      <text
+                        x="0"
+                        y="35"
+                        text-anchor="middle"
+                        fill="#374151"
+                        font-size="12"
+                        font-weight="bold"
+                      >
+                        Dev
+                      </text>
+                    </g>
+
+                    <g class="team-member design" transform="translate(-100, 0)">
+                      <circle cx="0" cy="0" r="20" fill="#f59e0b" />
+                      <circle cx="0" cy="0" r="10" fill="white" />
+                      <text
+                        x="0"
+                        y="35"
+                        text-anchor="middle"
+                        fill="#374151"
+                        font-size="12"
+                        font-weight="bold"
+                      >
+                        Design
+                      </text>
+                    </g>
+
+                    <g class="team-member pm" transform="translate(0, 100)">
+                      <circle cx="0" cy="0" r="20" fill="#ef4444" />
+                      <circle cx="0" cy="0" r="10" fill="white" />
+                      <text
+                        x="0"
+                        y="-25"
+                        text-anchor="middle"
+                        fill="#374151"
+                        font-size="12"
+                        font-weight="bold"
+                      >
+                        PM
+                      </text>
+                    </g>
+
+                    <g class="team-member qa" transform="translate(0, -100)">
+                      <circle cx="0" cy="0" r="20" fill="#8b5cf6" />
+                      <circle cx="0" cy="0" r="10" fill="white" />
+                      <text
+                        x="0"
+                        y="35"
+                        text-anchor="middle"
+                        fill="#374151"
+                        font-size="12"
+                        font-weight="bold"
+                      >
+                        QA
+                      </text>
+                    </g>
+
+                    <!-- Connection lines -->
+                    <line
+                      x1="25"
+                      y1="0"
+                      x2="75"
+                      y2="0"
+                      stroke="url(#aboutGradient)"
+                      stroke-width="2"
+                      opacity="0.7"
+                    />
+                    <line
+                      x1="-25"
+                      y1="0"
+                      x2="-75"
+                      y2="0"
+                      stroke="url(#aboutGradient)"
+                      stroke-width="2"
+                      opacity="0.7"
+                    />
+                    <line
+                      x1="0"
+                      y1="25"
+                      x2="0"
+                      y2="75"
+                      stroke="url(#aboutGradient)"
+                      stroke-width="2"
+                      opacity="0.7"
+                    />
+                    <line
+                      x1="0"
+                      y1="-25"
+                      x2="0"
+                      y2="-75"
+                      stroke="url(#aboutGradient)"
+                      stroke-width="2"
+                      opacity="0.7"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats and Values Row -->
+          <div class="about-cards">
             <div class="about-stats">
-              <div class="about-stat">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Năm kinh nghiệm</div>
+              <div class="about-stat" itemprop="foundingDate" content="2019">
+                <div class="stat-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-number">5</div>
+                <div class="stat-label">Nam kinh nghiem</div>
+              </div>
+              <div class="about-stat" itemprop="numberOfEmployees" content="50">
+                <div class="stat-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="stat-number">50</div>
+                <div class="stat-label">Chuyen gia</div>
               </div>
               <div class="about-stat">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Chuyên gia</div>
-              </div>
-              <div class="about-stat">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Dự án thành công</div>
+                <div class="stat-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-number">500</div>
+                <div class="stat-label">Du an thanh cong</div>
               </div>
             </div>
 
             <div class="about-values">
               <div class="value-item">
                 <div class="value-icon">
-                  <i class="fas fa-lightbulb"></i>
+                  <i class="fas fa-rocket"></i>
                 </div>
-                <h4>Đổi Mới</h4>
-                <p>Luôn cập nhật công nghệ mới nhất</p>
+                <h4>Doi Moi</h4>
+                <p>Luon cap nhat cong nghe moi nhat</p>
               </div>
               <div class="value-item">
                 <div class="value-icon">
-                  <i class="fas fa-shield-alt"></i>
+                  <i class="fas fa-lock"></i>
                 </div>
-                <h4>Bảo Mật</h4>
-                <p>Cam kết bảo mật thông tin khách hàng</p>
+                <h4>Bao Mat</h4>
+                <p>Cam ket bao mat thong tin khach hang</p>
               </div>
               <div class="value-item">
                 <div class="value-icon">
-                  <i class="fas fa-clock"></i>
+                  <i class="fas fa-star"></i>
                 </div>
-                <h4>Hiệu Quả</h4>
-                <p>Giao hàng đúng hẹn, chất lượng đảm bảo</p>
+                <h4>Hieu Qua</h4>
+                <p>Giao hang dung hen chat luong dam bao</p>
               </div>
-            </div>
-          </div>
-
-          <div class="about-visual">
-            <div class="about-svg-container">
-              <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient
-                    id="aboutGradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #6366f1; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #8b5cf6; stop-opacity: 1"
-                    />
-                  </linearGradient>
-                  <radialGradient id="teamGlow" cx="50%" cy="50%" r="50%">
-                    <stop
-                      offset="0%"
-                      style="stop-color: #6366f1; stop-opacity: 0.2"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #6366f1; stop-opacity: 0"
-                    />
-                  </radialGradient>
-                </defs>
-
-                <!-- Background elements -->
-                <circle
-                  cx="250"
-                  cy="250"
-                  r="200"
-                  fill="url(#teamGlow)"
-                  opacity="0.6"
-                />
-
-                <!-- Team collaboration illustration -->
-                <g transform="translate(250,250)">
-                  <!-- Central hub -->
-                  <circle cx="0" cy="0" r="40" fill="url(#aboutGradient)" />
-                  <circle
-                    cx="0"
-                    cy="0"
-                    r="25"
-                    fill="none"
-                    stroke="white"
-                    stroke-width="3"
-                  />
-                  <circle cx="0" cy="0" r="15" fill="white" />
-
-                  <!-- Team members -->
-                  <g class="team-member dev" transform="translate(100, 0)">
-                    <circle cx="0" cy="0" r="20" fill="#10b981" />
-                    <circle cx="0" cy="0" r="10" fill="white" />
-                    <text
-                      x="0"
-                      y="35"
-                      text-anchor="middle"
-                      fill="#374151"
-                      font-size="12"
-                      font-weight="bold"
-                    >
-                      Dev
-                    </text>
-                  </g>
-
-                  <g class="team-member design" transform="translate(-100, 0)">
-                    <circle cx="0" cy="0" r="20" fill="#f59e0b" />
-                    <circle cx="0" cy="0" r="10" fill="white" />
-                    <text
-                      x="0"
-                      y="35"
-                      text-anchor="middle"
-                      fill="#374151"
-                      font-size="12"
-                      font-weight="bold"
-                    >
-                      Design
-                    </text>
-                  </g>
-
-                  <g class="team-member pm" transform="translate(0, 100)">
-                    <circle cx="0" cy="0" r="20" fill="#ef4444" />
-                    <circle cx="0" cy="0" r="10" fill="white" />
-                    <text
-                      x="0"
-                      y="-25"
-                      text-anchor="middle"
-                      fill="#374151"
-                      font-size="12"
-                      font-weight="bold"
-                    >
-                      PM
-                    </text>
-                  </g>
-
-                  <g class="team-member qa" transform="translate(0, -100)">
-                    <circle cx="0" cy="0" r="20" fill="#8b5cf6" />
-                    <circle cx="0" cy="0" r="10" fill="white" />
-                    <text
-                      x="0"
-                      y="35"
-                      text-anchor="middle"
-                      fill="#374151"
-                      font-size="12"
-                      font-weight="bold"
-                    >
-                      QA
-                    </text>
-                  </g>
-
-                  <!-- Connection lines -->
-                  <line
-                    x1="25"
-                    y1="0"
-                    x2="75"
-                    y2="0"
-                    stroke="url(#aboutGradient)"
-                    stroke-width="2"
-                    opacity="0.7"
-                  />
-                  <line
-                    x1="-25"
-                    y1="0"
-                    x2="-75"
-                    y2="0"
-                    stroke="url(#aboutGradient)"
-                    stroke-width="2"
-                    opacity="0.7"
-                  />
-                  <line
-                    x1="0"
-                    y1="25"
-                    x2="0"
-                    y2="75"
-                    stroke="url(#aboutGradient)"
-                    stroke-width="2"
-                    opacity="0.7"
-                  />
-                  <line
-                    x1="0"
-                    y1="-25"
-                    x2="0"
-                    y2="-75"
-                    stroke="url(#aboutGradient)"
-                    stroke-width="2"
-                    opacity="0.7"
-                  />
-                </g>
-              </svg>
             </div>
           </div>
         </div>
@@ -1133,83 +1596,126 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">Liên Hệ</div>
-          <h2 class="section-title">Hãy Bắt Đầu Dự Án Của Bạn</h2>
+          <h2 id="contact-title" class="section-title">
+            Hãy Bắt Đầu Dự Án Của Bạn
+          </h2>
           <p class="section-description">
             Liên hệ với chúng tôi để nhận tư vấn miễn phí và báo giá chi tiết
-            cho dự án công nghệ của bạn.
+            cho dự án công nghệ của bạn. Đội ngũ chuyên gia của chúng tôi sẽ tư
+            vấn và đưa ra giải pháp phù hợp nhất với nhu cầu kinh doanh của bạn.
           </p>
         </div>
 
         <div class="contact-content">
-          <div class="contact-info">
+          <div
+            class="contact-info"
+            role="region"
+            aria-label="Thông tin liên hệ"
+          >
             <div class="info-item">
               <div class="info-icon">
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
               </div>
               <div class="info-content">
                 <h4>Địa Chỉ</h4>
-                <p>TP. Hồ Chí Minh, Việt Nam</p>
+                <address>TP. Hồ Chí Minh, Việt Nam</address>
               </div>
             </div>
 
             <div class="info-item">
               <div class="info-icon">
-                <i class="fas fa-phone"></i>
+                <i class="fas fa-phone" aria-hidden="true"></i>
               </div>
               <div class="info-content">
                 <h4>Điện Thoại</h4>
-                <p>+84 xxx xxx xxx</p>
+                <a href="tel:+84123456789" aria-label="Gọi cho chúng tôi"
+                  >+84 xxx xxx xxx</a
+                >
               </div>
             </div>
 
             <div class="info-item">
               <div class="info-icon">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
               </div>
               <div class="info-content">
                 <h4>Email</h4>
-                <p>contact@techpro.vn</p>
+                <a
+                  href="mailto:contact@techpro.vn"
+                  aria-label="Gửi email cho chúng tôi"
+                  >contact@techpro.vn</a
+                >
               </div>
             </div>
 
             <div class="info-item">
               <div class="info-icon">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
               </div>
               <div class="info-content">
                 <h4>Giờ Làm Việc</h4>
-                <p>Thứ 2 - Thứ 6: 8:00 - 18:00</p>
-                <p>Thứ 7: 8:00 - 12:00</p>
+                <time datetime="Mo-Fr 08:00-18:00"
+                  >Thứ 2 - Thứ 6: 8:00 - 18:00</time
+                >
+                <time datetime="Sa 08:00-12:00">Thứ 7: 8:00 - 12:00</time>
               </div>
             </div>
           </div>
 
           <div class="contact-form-container">
-            <form class="contact-form">
+            <form
+              class="contact-form"
+              action="#"
+              method="post"
+              aria-labelledby="contact-form-title"
+            >
+              <h3 id="contact-form-title" class="sr-only">Form liên hệ</h3>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="name">Họ và tên *</label>
+                  <label for="name"
+                    >Họ và tên
+                    <span class="required" aria-label="bắt buộc">*</span></label
+                  >
                   <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Nhập họ và tên"
                     required
+                    aria-required="true"
+                    aria-describedby="name-error"
                   />
+                  <div
+                    id="name-error"
+                    class="field-error"
+                    role="alert"
+                    aria-live="polite"
+                  ></div>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email *</label>
+                  <label for="email"
+                    >Email
+                    <span class="required" aria-label="bắt buộc">*</span></label
+                  >
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Nhập email"
                     required
+                    aria-required="true"
+                    aria-describedby="email-error"
                   />
+                  <div
+                    id="email-error"
+                    class="field-error"
+                    role="alert"
+                    aria-live="polite"
+                  ></div>
                 </div>
               </div>
 
@@ -1221,7 +1727,11 @@
                     id="phone"
                     name="phone"
                     placeholder="Nhập số điện thoại"
+                    aria-describedby="phone-hint"
                   />
+                  <div id="phone-hint" class="sr-only">
+                    Định dạng: +84 xxx xxx xxx
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="company">Công ty</label>
@@ -1236,37 +1746,77 @@
 
               <div class="form-group">
                 <label for="service">Dịch vụ quan tâm</label>
-                <select id="service" name="service">
+                <select
+                  id="service"
+                  name="service"
+                  aria-describedby="service-hint"
+                >
                   <option value="">Chọn dịch vụ</option>
                   <option value="web">Thiết kế website</option>
                   <option value="mobile">Phát triển ứng dụng</option>
                   <option value="consulting">Tư vấn công nghệ</option>
+                  <option value="ai">AI & Machine Learning</option>
+                  <option value="cloud">Cloud Computing</option>
                   <option value="other">Khác</option>
                 </select>
+                <div id="service-hint" class="sr-only">
+                  Chọn dịch vụ bạn quan tâm để chúng tôi tư vấn phù hợp
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="message">Nội dung *</label>
+                <label for="message"
+                  >Nội dung
+                  <span class="required" aria-label="bắt buộc">*</span></label
+                >
                 <textarea
                   id="message"
                   name="message"
                   placeholder="Mô tả dự án của bạn..."
                   required
+                  aria-required="true"
+                  aria-describedby="message-error message-hint"
+                  rows="5"
                 ></textarea>
+                <div
+                  id="message-error"
+                  class="field-error"
+                  role="alert"
+                  aria-live="polite"
+                ></div>
+                <div id="message-hint" class="sr-only">
+                  Mô tả chi tiết về dự án, yêu cầu và mục tiêu của bạn
+                </div>
               </div>
 
               <div class="form-group checkbox-group">
                 <label class="checkbox-label">
-                  <input type="checkbox" name="newsletter" />
-                  <span class="checkmark"></span>
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    id="newsletter"
+                    aria-describedby="newsletter-hint"
+                  />
+                  <span class="checkmark" aria-hidden="true"></span>
                   Đăng ký nhận tin tức và cập nhật từ TechPro
                 </label>
+                <div id="newsletter-hint" class="sr-only">
+                  Chúng tôi sẽ gửi thông tin về công nghệ mới và dự án của chúng
+                  tôi
+                </div>
               </div>
 
-              <button type="submit" class="form-submit">
+              <button
+                type="submit"
+                class="form-submit"
+                aria-describedby="submit-hint"
+              >
                 <span>Gửi tin nhắn</span>
-                <i class="fas fa-paper-plane"></i>
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
               </button>
+              <div id="submit-hint" class="sr-only">
+                Nhấn Enter hoặc Space để gửi form liên hệ
+              </div>
             </form>
           </div>
         </div>

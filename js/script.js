@@ -16,12 +16,31 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeroAnimations();
   initParticleEffects();
   initThemeTransition();
+  initProgressIndicator();
 });
 
-// Loading Animation
+// Enhanced Loading Animation
 function initLoading() {
   const loadingScreen = document.getElementById("loading-screen");
   if (loadingScreen) {
+    const tips = loadingScreen.querySelectorAll(".tip-item");
+    let currentTip = 0;
+
+    // Show tips sequentially
+    const showNextTip = () => {
+      if (currentTip > 0) {
+        tips[currentTip - 1].classList.remove("active");
+      }
+      if (currentTip < tips.length) {
+        tips[currentTip].classList.add("active");
+        currentTip++;
+        setTimeout(showNextTip, 800);
+      }
+    };
+
+    // Start showing tips
+    setTimeout(showNextTip, 500);
+
     // Simulate loading time
     setTimeout(() => {
       loadingScreen.classList.add("hide");
@@ -29,32 +48,23 @@ function initLoading() {
       setTimeout(() => {
         loadingScreen.remove();
       }, 500);
-    }, 2500); // Show loading for 2.5 seconds
+    }, 3000); // Show loading for 3 seconds
   }
 }
 
 // Header Scroll Effect
 function initHeaderScroll() {
   const header = document.querySelector("header");
-  let lastScrollTop = 0;
 
   window.addEventListener("scroll", () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      // Scrolling down
-      header.style.transform = "translateY(-100%)";
+    // Always keep header visible, just add scrolled class for styling
+    if (scrollTop > 50) {
+      header.classList.add("scrolled");
     } else {
-      // Scrolling up
-      header.style.transform = "translateY(0)";
-      if (scrollTop > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+      header.classList.remove("scrolled");
     }
-
-    lastScrollTop = scrollTop;
   });
 }
 
@@ -214,11 +224,33 @@ particleStyle.textContent = `
 `;
 document.head.appendChild(particleStyle);
 
-// Form Handling
+// Enhanced Form Handling
 function initFormHandling() {
   const form = document.querySelector(".contact-form");
 
   if (form) {
+    // Add focus/blur effects
+    const inputs = form.querySelectorAll("input, textarea, select");
+    inputs.forEach((input) => {
+      input.addEventListener("focus", function () {
+        this.closest(".form-group").classList.add("focused");
+        this.closest(".form-group").classList.remove("error", "success");
+      });
+
+      input.addEventListener("blur", function () {
+        this.closest(".form-group").classList.remove("focused");
+        validateField(this);
+      });
+
+      input.addEventListener("input", function () {
+        // Real-time validation feedback
+        if (this.value.trim() !== "") {
+          this.closest(".form-group").classList.remove("error");
+          hideFieldError(this.name);
+        }
+      });
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -228,26 +260,46 @@ function initFormHandling() {
 
       // Validate form
       if (validateForm(data)) {
-        // Show success message
+        // Add loading state
+        const submitBtn = this.querySelector(".form-submit");
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML =
+          '<span>Đang gửi...</span><i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+          // Show success message
+          showNotification(
+            "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+            "success"
+          );
+
+          // Reset form
+          this.reset();
+
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+
+          // Reset validation states
+          inputs.forEach((input) => {
+            input
+              .closest(".form-group")
+              .classList.remove("error", "success", "focused");
+            hideFieldError(input.name);
+          });
+
+          // Log data
+          console.log("Form submitted:", data);
+        }, 2000);
+      } else {
+        // Show error notification
         showNotification(
-          "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.",
-          "success"
+          "Vui lòng kiểm tra lại thông tin và thử lại.",
+          "error"
         );
-
-        // Reset form
-        this.reset();
-
-        // Simulate sending data
-        console.log("Form data:", data);
       }
-    });
-
-    // Real-time validation
-    const inputs = form.querySelectorAll("input, textarea");
-    inputs.forEach((input) => {
-      input.addEventListener("blur", function () {
-        validateField(this);
-      });
     });
   }
 }
@@ -308,36 +360,64 @@ function isValidEmail(email) {
 function showFieldError(fieldName, message) {
   const field = document.querySelector(`[name="${fieldName}"]`);
   const formGroup = field.closest(".form-group");
+  const errorDiv = formGroup.querySelector(".field-error");
 
   // Remove existing error
-  removeFieldError(fieldName);
+  hideFieldError(fieldName);
 
-  // Add error message
-  const errorDiv = document.createElement("div");
-  errorDiv.className = "field-error";
-  errorDiv.textContent = message;
-  errorDiv.style.cssText = `
-        color: #ef4444;
-        font-size: 0.875rem;
-        margin-top: 0.5rem;
-        animation: slideInDown 0.3s ease;
-    `;
+  // Add error class to form group
+  formGroup.classList.add("error");
+  formGroup.classList.remove("success");
 
-  formGroup.appendChild(errorDiv);
-  field.style.borderColor = "#ef4444";
+  // Show or create error message
+  if (errorDiv) {
+    errorDiv.textContent = message;
+    errorDiv.classList.add("show");
+  } else {
+    const newErrorDiv = document.createElement("div");
+    newErrorDiv.className = "field-error show";
+    newErrorDiv.textContent = message;
+    newErrorDiv.setAttribute("role", "alert");
+    newErrorDiv.setAttribute("aria-live", "polite");
+    formGroup.appendChild(newErrorDiv);
+  }
+
+  // Add shake animation
+  field.classList.add("shake");
+  setTimeout(() => {
+    field.classList.remove("shake");
+  }, 500);
 }
 
-function removeFieldError(fieldName) {
+function hideFieldError(fieldName) {
   const field = document.querySelector(`[name="${fieldName}"]`);
+  if (!field) return;
+
   const formGroup = field.closest(".form-group");
   const errorDiv = formGroup.querySelector(".field-error");
 
-  if (errorDiv) {
-    errorDiv.remove();
-  }
+  // Remove error class
+  formGroup.classList.remove("error");
 
-  field.style.borderColor = "#e5e7eb";
+  // Hide error message
+  if (errorDiv) {
+    errorDiv.classList.remove("show");
+  }
 }
+
+// Add shake animation CSS dynamically
+const shakeStyle = document.createElement("style");
+shakeStyle.textContent = `
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  .shake {
+    animation: shake 0.5s ease-in-out;
+  }
+`;
+document.head.appendChild(shakeStyle);
 
 // Notification System
 function showNotification(message, type = "info") {
@@ -1014,6 +1094,54 @@ function initEnhancedFormHandling() {
 
 // Initialize enhanced form handling
 initEnhancedFormHandling();
+
+// Progress Indicator
+function initProgressIndicator() {
+  const progressIndicator = document.getElementById("progress-indicator");
+  const progressFill = document.querySelector(".progress-fill");
+  const progressText = document.querySelector(".progress-text");
+
+  if (!progressIndicator) return;
+
+  let isVisible = false;
+
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+    const clampedPercent = Math.min(100, Math.max(0, scrollPercent));
+
+    // Update progress bar
+    progressFill.style.height = clampedPercent + "%";
+    progressText.textContent = Math.round(clampedPercent) + "%";
+
+    // Show/hide indicator based on scroll position
+    if (scrollTop > 200 && !isVisible) {
+      progressIndicator.classList.add("show");
+      isVisible = true;
+    } else if (scrollTop <= 200 && isVisible) {
+      progressIndicator.classList.remove("show");
+      isVisible = false;
+    }
+  }
+
+  // Throttle scroll events for better performance
+  let ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial update
+  updateProgress();
+}
 
 // Mobile Menu Functionality
 function initMobileMenu() {

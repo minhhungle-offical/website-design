@@ -6,11 +6,23 @@ footer {
   padding: 80px 0 40px;
 }
 
+footer .logo {
+  padding: 8px 0;
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   margin-bottom: 4rem;
+}
+
+.footer-content .contact-info {
+  gap: 1rem;
+}
+
+.footer-content .contact-info p {
+  margin: 0;
 }
 
 .footer-section h3 {
@@ -137,6 +149,7 @@ footer {
 
 .newsletter-form button:hover {
   background: var(--accent-light);
+  color: white !important;
   transform: translateY(-2px);
 }
 
@@ -198,4 +211,8 @@ footer {
   .newsletter-form button {
     width: 100%;
   }
+}
+.newsletter-text h4,
+.newsletter-text p {
+  color: white;
 }
