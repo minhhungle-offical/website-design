@@ -181,7 +181,7 @@ footer .logo {
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .newsletter-form {
@@ -190,6 +190,34 @@ footer .logo {
 
   .social-icons {
     justify-content: center;
+  }
+
+  /* Improve mobile footer list styling */
+  .footer-section ul li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  .footer-section ul li::before {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(
+      135deg,
+      var(--accent) 0%,
+      var(--accent-light) 100%
+    );
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
+  }
+
+  .footer-section ul li a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    transform: translateX(4px);
   }
 }
 
