@@ -184,13 +184,31 @@
   }
 }
 
-/* Focus States for Accessibility */
-.btn:focus,
-.cta-button:focus,
-.form-group input:focus,
-.form-group textarea:focus {
+/* Enhanced Focus States for Accessibility */
+.btn:focus-visible,
+.cta-button:focus-visible,
+.form-group input:focus-visible,
+.form-group textarea:focus-visible,
+.form-group select:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+/* Better mobile touch targets */
+@media (max-width: 768px) {
+  .btn,
+  .cta-button,
+  .social-icons a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .nav-links li a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* Print Styles */
@@ -311,5 +329,195 @@
 
   .social-icons a:hover {
     transform: none;
+  }
+}
+
+/* Modern Responsive Design Patterns */
+
+/* Container Query Support (Future-proofing) */
+@container (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Fluid Typography with Better Scaling */
+@media (min-width: 768px) {
+  .fluid-text {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+
+  .fluid-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+/* Advanced Grid Systems */
+@media (min-width: 1024px) {
+  .advanced-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+  }
+
+  .sidebar-grid {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+/* Improved Mobile Navigation */
+@media (max-width: 768px) {
+  .mobile-optimized {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .mobile-stack {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-optimized {
+    padding: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .tablet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1440px) {
+  .ultra-wide {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .ultra-wide-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Aspect ratio containers for modern layouts */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-card {
+  aspect-ratio: 4 / 3;
+}
+
+/* Modern spacing system */
+.spacing-fluid {
+  padding: clamp(1rem, 4vw, 4rem);
+  margin: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* Improved focus states for modern browsers */
+@supports (selector(:focus-visible)) {
+  .btn:focus:not(:focus-visible),
+  .cta-button:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* CSS Grid improvements for responsive design */
+@media (min-width: 768px) {
+  .grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+/* Modern card layouts */
+@media (min-width: 1024px) {
+  .card-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: masonry;
+    gap: 2rem;
+  }
+}
+
+/* Improved form layouts for mobile */
+@media (max-width: 480px) {
+  .form-mobile-optimized {
+    .form-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .mobile-performance {
+    /* Reduce motion for better performance */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .mobile-performance * {
+    /* Optimize rendering */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Safe area support for modern devices */
+@supports (padding: max(0px)) {
+  .safe-area {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Modern scrollbar styling */
+@media (min-width: 768px) {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--surface);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dark);
   }
 }

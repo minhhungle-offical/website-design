@@ -3,26 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechPro Solutions - Công Nghệ Hiện Đại & Đổi Mới</title>
+
+    <!-- Enhanced SEO Meta Tags -->
+    <title>
+      TechPro Solutions - Giải Pháp Công Nghệ Số Hiện Đại | Website & App
+      Development
+    </title>
     <meta
       name="description"
-      content="TechPro Solutions - Đơn vị hàng đầu về giải pháp công nghệ số. Phát triển website, ứng dụng di động, AI & Machine Learning với công nghệ tiên tiến nhất."
+      content="TechPro Solutions - Đơn vị hàng đầu Việt Nam về phát triển website, ứng dụng di động, AI & Machine Learning. Giải pháp công nghệ toàn diện với React, Node.js, Python, AWS. Tư vấn miễn phí!"
     />
     <meta
       name="keywords"
-      content="TechPro, công nghệ, website, ứng dụng di động, AI, machine learning, cloud computing, DevOps, Việt Nam"
+      content="TechPro Solutions, phát triển website, ứng dụng di động, AI, machine learning, cloud computing, DevOps, React, Node.js, Python, AWS, Việt Nam, TP.HCM"
     />
     <meta name="author" content="TechPro Solutions" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="language" content="Vietnamese" />
+    <meta name="geo.region" content="VN" />
+    <meta name="geo.placename" content="TP. Hồ Chí Minh" />
+    <meta name="geo.position" content="10.8231;106.6297" />
+    <meta name="ICBM" content="10.8231, 106.6297" />
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://techpro.vn/" />
+    <meta
+      property="og:title"
+      content="TechPro Solutions - Giải Pháp Công Nghệ Số Hiện Đại"
+    />
+    <meta
+      property="og:description"
+      content="Đơn vị hàng đầu Việt Nam về phát triển website, ứng dụng di động, AI & Machine Learning. Tư vấn miễn phí!"
+    />
+    <meta property="og:image" content="https://techpro.vn/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="TechPro Solutions" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://techpro.vn/" />
+    <meta
+      property="twitter:title"
+      content="TechPro Solutions - Giải Pháp Công Nghệ Số Hiện Đại"
+    />
+    <meta
+      property="twitter:description"
+      content="Đơn vị hàng đầu Việt Nam về phát triển website, ứng dụng di động, AI & Machine Learning. Tư vấn miễn phí!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://techpro.vn/twitter-image.jpg"
     />
 
-    <!-- Google Fonts - Modern Tech Stack -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://techpro.vn/" />
+
+    <!-- Favicon with multiple sizes -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Google Fonts - Modern Tech Stack -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -34,7 +92,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- External CSS -->
+    <!-- External CSS with integrity checks -->
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -45,13 +103,83 @@
     <link rel="preload" href="css/common.css" as="style" />
     <link rel="preload" href="css/header.css" as="style" />
     <link rel="preload" href="css/index.css" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      as="style"
+    />
 
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#6366f1" />
     <meta name="msapplication-TileColor" content="#6366f1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TechPro Solutions" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TechPro Solutions",
+        "url": "https://techpro.vn",
+        "logo": "https://techpro.vn/logo.png",
+        "description": "Đơn vị hàng đầu Việt Nam về giải pháp công nghệ số, phát triển website, ứng dụng di động, AI & Machine Learning",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "TP. Hồ Chí Minh",
+          "addressCountry": "VN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+84-xxx-xxx-xxx",
+          "contactType": "customer service",
+          "availableLanguage": "Vietnamese"
+        },
+        "sameAs": [
+          "https://facebook.com/techpro.vn",
+          "https://linkedin.com/company/techpro-solutions",
+          "https://github.com/techpro-solutions"
+        ],
+        "serviceType": [
+          "Web Development",
+          "Mobile App Development",
+          "AI & Machine Learning",
+          "Cloud Computing",
+          "DevOps"
+        ],
+        "areaServed": "VN",
+        "priceRange": "$$"
+      }
+    </script>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
   </head>
 
   <body>
+    <!-- Skip to main content link -->
+    <a href="#home" class="skip-link">Skip to main content</a>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-container">
+        <div class="loading-logo">
+          <div class="logo-pulse">
+            <span class="logo-text-loading">TechPro</span>
+          </div>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <div class="loading-text">Đang tải...</div>
+      </div>
+    </div>
+
     <!-- Theme Toggle Button -->
     <button
       id="theme-toggle"
@@ -63,30 +191,54 @@
     </button>
 
     <!-- Header -->
-    <header>
-      <nav class="container">
+    <header role="banner">
+      <nav class="container" role="navigation" aria-label="Main navigation">
         <div class="nav-brand">
-          <div class="logo">
+          <a
+            href="#home"
+            class="logo"
+            aria-label="TechPro Solutions - Go to homepage"
+          >
             <div class="logo-text">
               <span class="logo-main">TechPro</span>
               <span class="logo-tagline">Solutions</span>
             </div>
-          </div>
+          </a>
         </div>
 
         <div class="nav-menu">
-          <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Trang Chủ</a></li>
-            <li><a href="#features" class="nav-link">Công Nghệ</a></li>
-            <li><a href="#services" class="nav-link">Dịch Vụ</a></li>
-            <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
-            <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
+          <ul class="nav-links" role="menubar">
+            <li role="none">
+              <a
+                href="#home"
+                class="nav-link active"
+                role="menuitem"
+                aria-current="page"
+                >Trang Chủ</a
+              >
+            </li>
+            <li role="none">
+              <a href="#features" class="nav-link" role="menuitem">Công Nghệ</a>
+            </li>
+            <li role="none">
+              <a href="#services" class="nav-link" role="menuitem">Dịch Vụ</a>
+            </li>
+            <li role="none">
+              <a href="#about" class="nav-link" role="menuitem">Giới Thiệu</a>
+            </li>
+            <li role="none">
+              <a href="#contact" class="nav-link" role="menuitem">Liên Hệ</a>
+            </li>
           </ul>
 
           <div class="nav-actions">
-            <a href="#contact" class="cta-button">
+            <a
+              href="#contact"
+              class="cta-button"
+              aria-label="Get consultation now"
+            >
               <span>Tư Vấn Ngay</span>
-              <svg viewBox="0 0 24 24" fill="currentColor">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
                 />
@@ -95,15 +247,19 @@
           </div>
         </div>
 
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <button
+          class="hamburger"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
       </nav>
 
       <!-- Floating Elements -->
-      <div class="floating-elements">
+      <div class="floating-elements" aria-hidden="true">
         <div class="floating-circle circle-1"></div>
         <div class="floating-circle circle-2"></div>
         <div class="floating-circle circle-3"></div>
@@ -111,56 +267,147 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" role="main" aria-labelledby="hero-title">
       <div class="hero-background">
         <div class="hero-pattern"></div>
         <div class="hero-gradient"></div>
+
+        <!-- Floating Particles -->
+        <div class="floating-particles" aria-hidden="true">
+          <div
+            class="particle"
+            style="
+              top: 20%;
+              left: 10%;
+              width: 8px;
+              height: 8px;
+              background: var(--accent);
+            "
+          ></div>
+          <div
+            class="particle"
+            style="
+              top: 60%;
+              left: 80%;
+              width: 12px;
+              height: 12px;
+              background: var(--accent-light);
+            "
+          ></div>
+          <div
+            class="particle"
+            style="
+              top: 40%;
+              left: 70%;
+              width: 6px;
+              height: 6px;
+              background: #f59e0b;
+            "
+          ></div>
+          <div
+            class="particle"
+            style="
+              top: 80%;
+              left: 20%;
+              width: 10px;
+              height: 10px;
+              background: var(--accent);
+            "
+          ></div>
+        </div>
       </div>
 
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <div class="hero-badge">
-              <span class="badge-icon">🚀</span>
+            <div class="hero-badge magnetic" role="banner">
+              <span class="badge-icon" aria-hidden="true">🚀</span>
               <span>Công Nghệ Tiên Tiến Nhất 2024</span>
             </div>
 
-            <h1 class="hero-title">
-              <span class="title-main">Giải Pháp Công Nghệ</span>
-              <span class="title-accent">Số Hiện Đại</span>
+            <h1 id="hero-title" class="hero-title">
+              <span class="title-main text-reveal"
+                ><span>Giải Pháp Công Nghệ</span></span
+              >
+              <span class="title-accent text-reveal"
+                ><span>Số Hiện Đại</span></span
+              >
             </h1>
 
             <p class="hero-description">
               Chúng tôi cung cấp các giải pháp công nghệ toàn diện với
-              <strong>AI & Machine Learning</strong>,
-              <strong>Cloud Computing</strong>, và <strong>DevOps</strong> để
-              tối ưu hóa doanh nghiệp của bạn.
+              <strong class="gradient-text">AI & Machine Learning</strong>,
+              <strong class="gradient-text">Cloud Computing</strong>, và
+              <strong class="gradient-text">DevOps</strong> để tối ưu hóa doanh
+              nghiệp của bạn.
             </p>
 
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-number" data-target="500">0</div>
+            <div
+              class="hero-stats"
+              role="region"
+              aria-label="Company statistics"
+            >
+              <div class="stat-item scroll-reveal" role="text">
+                <div
+                  class="stat-number"
+                  data-target="500"
+                  aria-label="500 projects completed"
+                >
+                  0
+                </div>
                 <div class="stat-label">Dự án hoàn thành</div>
               </div>
-              <div class="stat-item">
-                <div class="stat-number" data-target="98">0</div>
+              <div class="stat-item scroll-reveal delay-1" role="text">
+                <div
+                  class="stat-number"
+                  data-target="98"
+                  aria-label="98% customer satisfaction"
+                >
+                  0
+                </div>
                 <div class="stat-label">Khách hàng hài lòng</div>
               </div>
-              <div class="stat-item">
-                <div class="stat-number" data-target="24">0</div>
+              <div class="stat-item scroll-reveal delay-2" role="text">
+                <div
+                  class="stat-number"
+                  data-target="24"
+                  aria-label="24/7 support available"
+                >
+                  0
+                </div>
                 <div class="stat-label">Hỗ trợ 24/7</div>
               </div>
             </div>
 
-            <div class="hero-buttons">
-              <a href="#services" class="btn btn-primary">
+            <div
+              class="hero-buttons"
+              role="group"
+              aria-label="Call to action buttons"
+            >
+              <a
+                href="#services"
+                class="btn btn-primary liquid-button interactive-glow"
+                aria-describedby="services-desc"
+              >
                 <span>Khám phá dịch vụ</span>
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
-              <a href="#contact" class="btn btn-secondary">
+              <a
+                href="#contact"
+                class="btn btn-secondary magnetic"
+                aria-describedby="contact-desc"
+              >
                 <span>Liên hệ tư vấn</span>
-                <i class="fas fa-phone"></i>
+                <i class="fas fa-phone" aria-hidden="true"></i>
               </a>
+            </div>
+
+            <!-- Hidden descriptions for screen readers -->
+            <div id="services-desc" class="sr-only">
+              Explore our comprehensive technology services
+            </div>
+            <div id="contact-desc" class="sr-only">
+              Get free consultation for your project
             </div>
           </div>
 
@@ -474,8 +721,8 @@
         </div>
 
         <div class="features-grid">
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-code"></i>
             </div>
             <h3>Web Development</h3>
@@ -484,14 +731,14 @@
               performance và trải nghiệm người dùng.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag gradient-animate">React</span>
+              <span class="tech-tag gradient-animate">Vue.js</span>
+              <span class="tech-tag gradient-animate">Node.js</span>
             </div>
           </div>
 
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-mobile-alt"></i>
             </div>
             <h3>Mobile Apps</h3>
@@ -500,14 +747,14 @@
               Flutter và React Native.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">Swift</span>
+              <span class="tech-tag gradient-animate">Flutter</span>
+              <span class="tech-tag gradient-animate">React Native</span>
+              <span class="tech-tag gradient-animate">Swift</span>
             </div>
           </div>
 
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-brain"></i>
             </div>
             <h3>AI & Machine Learning</h3>
@@ -516,14 +763,14 @@
               minh và dự đoán.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">PyTorch</span>
-              <span class="tech-tag">NLP</span>
+              <span class="tech-tag gradient-animate">TensorFlow</span>
+              <span class="tech-tag gradient-animate">PyTorch</span>
+              <span class="tech-tag gradient-animate">NLP</span>
             </div>
           </div>
 
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-cloud"></i>
             </div>
             <h3>Cloud Computing</h3>
@@ -532,14 +779,14 @@
               với tối ưu chi phí.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">AWS</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag gradient-animate">AWS</span>
+              <span class="tech-tag gradient-animate">Docker</span>
+              <span class="tech-tag gradient-animate">Kubernetes</span>
             </div>
           </div>
 
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-shield-alt"></i>
             </div>
             <h3>Cybersecurity</h3>
@@ -548,14 +795,14 @@
               thủ các tiêu chuẩn quốc tế.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">SSL</span>
-              <span class="tech-tag">Firewall</span>
-              <span class="tech-tag">Encryption</span>
+              <span class="tech-tag gradient-animate">SSL</span>
+              <span class="tech-tag gradient-animate">Firewall</span>
+              <span class="tech-tag gradient-animate">Encryption</span>
             </div>
           </div>
 
-          <div class="feature-card animate-on-scroll">
-            <div class="feature-icon">
+          <div class="feature-card animate-on-scroll card-3d magnetic">
+            <div class="feature-icon morph-shape">
               <i class="fas fa-cogs"></i>
             </div>
             <h3>DevOps & CI/CD</h3>
@@ -564,9 +811,9 @@
               monitoring 24/7.
             </p>
             <div class="feature-tech">
-              <span class="tech-tag">Git</span>
-              <span class="tech-tag">Jenkins</span>
-              <span class="tech-tag">Docker</span>
+              <span class="tech-tag gradient-animate">Git</span>
+              <span class="tech-tag gradient-animate">Jenkins</span>
+              <span class="tech-tag gradient-animate">Docker</span>
             </div>
           </div>
         </div>
@@ -1153,8 +1400,57 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- External JavaScript -->
-    <script src="js/script.js"></script>
-    <script src="js/theme.js"></script>
+    <!-- External JavaScript with defer for better performance -->
+    <script src="js/script.js" defer></script>
+    <script src="js/theme.js" defer></script>
+
+    <!-- Performance optimization: Preload critical JavaScript -->
+    <link rel="preload" href="js/script.js" as="script" />
+    <link rel="preload" href="js/theme.js" as="script" />
+
+    <!-- Resource hints for better performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Critical CSS inlined for better performance -->
+    <style>
+      /* Critical above-the-fold styles */
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+      }
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .loading-screen.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #6366f1;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 1000;
+        font-weight: 600;
+      }
+      .skip-link:focus {
+        top: 6px;
+      }
+    </style>
   </body>
 </html>
