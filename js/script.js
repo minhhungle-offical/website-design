@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initCounters();
   initTechNodes();
   initMobileMenu();
+  initHeroAnimations();
+  initParticleEffects();
+  initThemeTransition();
 });
 
 // Loading Animation
@@ -474,7 +477,461 @@ loadingStyles.textContent = `
             opacity: 1;
             transform: translateY(0);
         }
-    }
+      }
+      
+      // =============================================================================
+      // HERO ANIMATIONS - Premium Interactive Effects
+      // =============================================================================
+      
+      function initHeroAnimations() {
+        const hero = document.querySelector('.hero');
+        const heroTitle = document.querySelector('.hero-title');
+        const heroDescription = document.querySelector('.hero-description');
+        const heroButtons = document.querySelector('.hero-buttons');
+        const heroStats = document.querySelector('.hero-stats');
+        const heroSvg = document.querySelector('.hero-svg');
+      
+        if (!hero) return;
+      
+        // Intersection Observer for hero animations
+        const heroObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Staggered animation sequence
+              setTimeout(() => animateHeroTitle(), 200);
+              setTimeout(() => animateHeroDescription(), 600);
+              setTimeout(() => animateHeroStats(), 1000);
+              setTimeout(() => animateHeroButtons(), 1400);
+              setTimeout(() => animateHeroSvg(), 800);
+      
+              heroObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+      
+        heroObserver.observe(hero);
+      
+        // Mouse movement parallax effect
+        let mouseX = 0;
+        let mouseY = 0;
+      
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX / window.innerWidth;
+          mouseY = e.clientY / window.innerHeight;
+      
+          updateParallax();
+        });
+      
+        function updateParallax() {
+          const parallaxElements = document.querySelectorAll('.floating-circle, .tech-stack-showcase');
+      
+          parallaxElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed;
+            const y = (mouseY - 0.5) * speed;
+      
+            element.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+          });
+        }
+      }
+      
+      function animateHeroTitle() {
+        const title = document.querySelector('.hero-title');
+        if (!title) return;
+      
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(30px)';
+      
+        setTimeout(() => {
+          title.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+          title.style.opacity = '1';
+          title.style.transform = 'translateY(0)';
+        }, 100);
+      }
+      
+      function animateHeroDescription() {
+        const description = document.querySelector('.hero-description');
+        if (!description) return;
+      
+        description.style.opacity = '0';
+        description.style.transform = 'translateY(20px)';
+      
+        setTimeout(() => {
+          description.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+          description.style.opacity = '1';
+          description.style.transform = 'translateY(0)';
+        }, 100);
+      }
+      
+      function animateHeroStats() {
+        const stats = document.querySelectorAll('.hero-stats .stat-item');
+        if (!stats.length) return;
+      
+        stats.forEach((stat, index) => {
+          stat.style.opacity = '0';
+          stat.style.transform = 'translateY(20px)';
+      
+          setTimeout(() => {
+            stat.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            stat.style.opacity = '1';
+            stat.style.transform = 'translateY(0)';
+          }, index * 150);
+        });
+      }
+      
+      function animateHeroButtons() {
+        const buttons = document.querySelectorAll('.hero-buttons .btn');
+        if (!buttons.length) return;
+      
+        buttons.forEach((button, index) => {
+          button.style.opacity = '0';
+          button.style.transform = 'translateY(20px)';
+      
+          setTimeout(() => {
+            button.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            button.style.opacity = '1';
+            button.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }
+      
+      function animateHeroSvg() {
+        const svg = document.querySelector('.hero-svg');
+        if (!svg) return;
+      
+        svg.style.opacity = '0';
+        svg.style.transform = 'scale(0.8) translateY(30px)';
+      
+        setTimeout(() => {
+          svg.style.transition = 'all 1s cubic-bezier(0.4, 0, 0.2, 1)';
+          svg.style.opacity = '1';
+          svg.style.transform = 'scale(1) translateY(0)';
+        }, 100);
+      }
+      
+      // =============================================================================
+      // PARTICLE EFFECTS - Dynamic Background Animation
+      // =============================================================================
+      
+      function initParticleEffects() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+      
+        // Create particle container
+        const particleContainer = document.createElement('div');
+        particleContainer.className = 'particle-container';
+        particleContainer.style.position = 'absolute';
+        particleContainer.style.top = '0';
+        particleContainer.style.left = '0';
+        particleContainer.style.width = '100%';
+        particleContainer.style.height = '100%';
+        particleContainer.style.pointerEvents = 'none';
+        particleContainer.style.zIndex = '1';
+        particleContainer.style.overflow = 'hidden';
+      
+        hero.appendChild(particleContainer);
+      
+        // Create particles
+        const particleCount = window.innerWidth < 768 ? 15 : 25;
+      
+        for (let i = 0; i < particleCount; i++) {
+          createParticle(particleContainer, i);
+        }
+      
+        // Animate particles
+        animateParticles();
+      }
+      
+      function createParticle(container, index) {
+        const particle = document.createElement('div');
+        particle.className = 'floating-particle';
+      
+        const size = Math.random() * 6 + 2;
+        const colors = ['#6366f1', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        const duration = Math.random() * 20 + 15;
+        const delay = Math.random() * 5;
+        const opacity = Math.random() * 0.6 + 0.2;
+      
+        particle.style.position = 'absolute';
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.background = color;
+        particle.style.borderRadius = '50%';
+        particle.style.opacity = opacity.toString();
+        particle.style.left = left + '%';
+        particle.style.top = top + '%';
+        particle.style.animation = 'floatParticle ' + duration + 's linear infinite';
+        particle.style.animationDelay = delay + 's';
+      
+        container.appendChild(particle);
+      }
+      
+      function animateParticles() {
+        // Add particle animation styles dynamically
+        if (!document.getElementById('particle-styles')) {
+          const particleStyles = document.createElement('style');
+          particleStyles.id = 'particle-styles';
+          particleStyles.textContent =
+            '@keyframes floatParticle {' +
+            '  0% {' +
+            '    transform: translateY(0px) translateX(0px) rotate(0deg);' +
+            '    opacity: 0.2;' +
+            '  }' +
+            '  25% {' +
+            '    transform: translateY(-20px) translateX(10px) rotate(90deg);' +
+            '    opacity: 0.6;' +
+            '  }' +
+            '  50% {' +
+            '    transform: translateY(-10px) translateX(-10px) rotate(180deg);' +
+            '    opacity: 0.8;' +
+            '  }' +
+            '  75% {' +
+            '    transform: translateY(-30px) translateX(5px) rotate(270deg);' +
+            '    opacity: 0.4;' +
+            '  }' +
+            '  100% {' +
+            '    transform: translateY(-100vh) translateX(0px) rotate(360deg);' +
+            '    opacity: 0;' +
+            '  }' +
+            '}';
+          document.head.appendChild(particleStyles);
+        }
+      }
+      
+      // =============================================================================
+      // THEME TRANSITION EFFECTS - Smooth Theme Switching
+      // =============================================================================
+      
+      function initThemeTransition() {
+        // Listen for theme changes
+        window.addEventListener('themeChange', handleThemeChange);
+      
+        // Add transition styles
+        addThemeTransitionStyles();
+      }
+      
+      function handleThemeChange(event) {
+        const { theme, animate } = event.detail;
+      
+        if (animate) {
+          // Add transition class
+          document.body.classList.add('theme-transitioning');
+      
+          // Play transition sound (optional)
+          playThemeTransitionSound(theme);
+      
+          // Remove transition class after animation
+          setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+          }, 400);
+        }
+      
+        // Update meta theme-color for mobile browsers
+        updateMetaThemeColor(theme);
+      
+        // Log theme change
+        console.log('🎨 Theme switched to: ' + theme);
+      }
+      
+      function addThemeTransitionStyles() {
+        if (!document.getElementById('theme-transition-styles')) {
+          const transitionStyles = document.createElement('style');
+          transitionStyles.id = 'theme-transition-styles';
+          transitionStyles.textContent =
+            '.theme-transitioning * {' +
+            '  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;' +
+            '}' +
+            '.theme-transitioning {' +
+            '  position: relative;' +
+            '}' +
+            '.theme-transitioning::before {' +
+            '  content: "";' +
+            '  position: fixed;' +
+            '  top: 0;' +
+            '  left: 0;' +
+            '  width: 100%;' +
+            '  height: 100%;' +
+            '  background: var(--bg-primary);' +
+            '  z-index: 9998;' +
+            '  opacity: 0.8;' +
+            '  animation: themeFlash 0.4s ease;' +
+            '  pointer-events: none;' +
+            '}' +
+            '@keyframes themeFlash {' +
+            '  0% { opacity: 0; }' +
+            '  50% { opacity: 0.3; }' +
+            '  100% { opacity: 0; }' +
+            '}';
+          document.head.appendChild(transitionStyles);
+        }
+      }
+      
+      function updateMetaThemeColor(theme) {
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', theme === 'dark' ? '#0f172a' : '#6366f1');
+        }
+      }
+      
+      function playThemeTransitionSound(theme) {
+        // Optional: Add subtle sound effect for theme change
+        // This is commented out as it requires user interaction to play audio
+        /*
+        try {
+          const audio = new Audio();
+          audio.src = theme === 'dark' ? 'sounds/dark-mode.mp3' : 'sounds/light-mode.mp3';
+          audio.volume = 0.3;
+          audio.play().catch(() => {
+            // Silently fail if audio can't be played
+          });
+        } catch (error) {
+          // Silently fail if audio is not supported
+        }
+        */
+      }
+      
+      // =============================================================================
+      // ENHANCED FORM HANDLING - Better UX for Contact Form
+      // =============================================================================
+      
+      function initEnhancedFormHandling() {
+        const form = document.querySelector('.contact-form');
+        if (!form) return;
+      
+        const inputs = form.querySelectorAll('input, select, textarea');
+      
+        inputs.forEach(input => {
+          // Real-time validation
+          input.addEventListener('input', () => {
+            validateField(input);
+          });
+      
+          input.addEventListener('blur', () => {
+            validateField(input);
+          });
+      
+          // Enhanced focus states
+          input.addEventListener('focus', () => {
+            input.parentElement.classList.add('focused');
+          });
+      
+          input.addEventListener('blur', () => {
+            input.parentElement.classList.remove('focused');
+          });
+        });
+      
+        // Character counter for textarea
+        const textarea = form.querySelector('textarea');
+        if (textarea) {
+          const counter = document.createElement('div');
+          counter.className = 'char-counter';
+          counter.style.fontSize = '0.75rem';
+          counter.style.color = 'var(--text-muted)';
+          counter.style.textAlign = 'right';
+          counter.style.marginTop = '0.25rem';
+          textarea.parentElement.appendChild(counter);
+      
+          textarea.addEventListener('input', function() {
+            const count = textarea.value.length;
+            const max = 1000;
+            counter.textContent = count + '/' + max;
+      
+            if (count > max * 0.9) {
+              counter.style.color = '#ef4444';
+            } else if (count > max * 0.7) {
+              counter.style.color = '#f59e0b';
+            } else {
+              counter.style.color = 'var(--text-muted)';
+            }
+          });
+        }
+      }
+      
+      function validateField(field) {
+        const value = field.value.trim();
+        const fieldName = field.name;
+        let isValid = true;
+      
+        // Remove previous validation states
+        field.parentElement.classList.remove('error', 'success');
+      
+        switch (fieldName) {
+          case 'name':
+            isValid = value.length >= 2;
+            break;
+          case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = emailRegex.test(value);
+            break;
+          case 'message':
+            isValid = value.length >= 10;
+            break;
+        }
+      
+        if (value.length > 0) {
+          field.parentElement.classList.add(isValid ? 'success' : 'error');
+        }
+      
+        return isValid;
+      }
+      
+      // =============================================================================
+      // PERFORMANCE OPTIMIZATIONS
+      // =============================================================================
+      
+      // Debounce function for performance
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+      
+      // Throttle function for performance
+      function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+          const args = arguments;
+          const context = this;
+          if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+          }
+        };
+      }
+      
+      // Apply performance optimizations
+      window.addEventListener('scroll', debounce(() => {
+        // Throttled scroll handlers
+      }, 16)); // ~60fps
+      
+      // Preload critical images
+      function preloadCriticalImages() {
+        const images = [
+          // Add critical images to preload here
+        ];
+      
+        images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      }
+      
+      // Initialize performance optimizations
+      preloadCriticalImages();
+      
+      // =============================================================================
+      // END OF ENHANCED SCRIPT
+      // =============================================================================
 
     .field-error {
         animation: slideInDown 0.3s ease;
@@ -545,64 +1002,59 @@ function initTechNodes() {
 
   // Animate tech nodes
   nodes.forEach((node, index) => {
-    node.style.animation = `pulse 2s ease-in-out ${index * 0.2}s infinite`;
+    node.style.animation = "pulse 2s ease-in-out " + index * 0.2 + "s infinite";
   });
 
   // Animate data particles
   dataParticles.forEach((particle, index) => {
-    particle.style.animation = `floatParticle 3s ease-in-out ${
-      index * 0.3
-    }s infinite`;
+    particle.style.animation =
+      "floatParticle 3s ease-in-out " + index * 0.3 + "s infinite";
   });
 
   // Add CSS animations dynamically
   const techAnimations = document.createElement("style");
-  techAnimations.textContent = `
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-    }
-
-    @keyframes floatParticle {
-      0%, 100% {
-        transform: translateY(0px) translateX(0px);
-        opacity: 0.6;
-      }
-      25% {
-        transform: translateY(-10px) translateX(5px);
-        opacity: 0.8;
-      }
-      50% {
-        transform: translateY(-5px) translateX(-5px);
-        opacity: 1;
-      }
-      75% {
-        transform: translateY(-15px) translateX(3px);
-        opacity: 0.7;
-      }
-    }
-
-    .tech-nodes line {
-      animation: linePulse 3s ease-in-out infinite;
-    }
-
-    @keyframes linePulse {
-      0%, 100% {
-        opacity: 0.6;
-        stroke-width: 2;
-      }
-      50% {
-        opacity: 1;
-        stroke-width: 3;
-      }
-    }
-  `;
+  techAnimations.textContent =
+    "@keyframes pulse {" +
+    "  0%, 100% {" +
+    "    transform: scale(1);" +
+    "    opacity: 0.8;" +
+    "  }" +
+    "  50% {" +
+    "    transform: scale(1.1);" +
+    "    opacity: 1;" +
+    "  }" +
+    "}" +
+    "@keyframes floatParticle {" +
+    "  0%, 100% {" +
+    "    transform: translateY(0px) translateX(0px);" +
+    "    opacity: 0.6;" +
+    "  }" +
+    "  25% {" +
+    "    transform: translateY(-10px) translateX(5px);" +
+    "    opacity: 0.8;" +
+    "  }" +
+    "  50% {" +
+    "    transform: translateY(-5px) translateX(-5px);" +
+    "    opacity: 1;" +
+    "  }" +
+    "  75% {" +
+    "    transform: translateY(-15px) translateX(3px);" +
+    "    opacity: 0.7;" +
+    "  }" +
+    "}" +
+    ".tech-nodes line {" +
+    "  animation: linePulse 3s ease-in-out infinite;" +
+    "}" +
+    "@keyframes linePulse {" +
+    "  0%, 100% {" +
+    "    opacity: 0.6;" +
+    "    stroke-width: 2;" +
+    "  }" +
+    "  50% {" +
+    "    opacity: 1;" +
+    "    stroke-width: 3;" +
+    "  }" +
+    "}";
   document.head.appendChild(techAnimations);
 }
 
